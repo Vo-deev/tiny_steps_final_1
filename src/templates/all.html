@@ -10,13 +10,13 @@
             <p class="lead float-left d-inline-block mt-2 mb-0">
               <strong>15 преподавателей в базе</strong>
             </p>
-            <form class="float-right d-inline-block">
+            <form method="post" action="{{ url_for('all_teachers') }}" class="float-right d-inline-block">
               <div class="form-inline">
-                <select class="custom-select my-1 mr-2" id="inlineFormCustomSelectPref">
+                <select name="choice" class="custom-select my-1 mr-2" id="inlineFormCustomSelectPref">
                   <option selected>В случайном порядке</option>
-                  <option value="">Сначале лучшие по рейтингу</option>
-                  <option value="">Сначала дорогие</option>
-                  <option value="">Сначала недорогие</option>
+                  <option value="best">Сначале лучшие по рейтингу</option>
+                  <option value="exp">Сначала дорогие</option>
+                  <option value="chp">Сначала недорогие</option>
                 </select>
                 <button type="submit" class="btn btn-primary my-1">Сортировать</button>
               </div>
@@ -31,7 +31,7 @@
               <div class="col-9">
                 <p class="float-right">Рейтинг: {{ teacher["rating"] }} Ставка: {{ teacher["price"] }} / час</p>
                 <h2 class="h4">{{ teacher["name"] }}</h2>
-                <p>{{ teacher["about"] }}</p>
+                <p>{{ teacher["description"] }}</p>
                 <a href="profile.html" class="btn btn-outline-primary btn-sm mr-3 mb-2">Показать информацию и расписание</a>
               </div>
             </div>

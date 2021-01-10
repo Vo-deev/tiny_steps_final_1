@@ -1,5 +1,13 @@
-# Project exclude paths
+# IDE settings
+.vscode/
 .idea/
-/venv/
+
+# Modules
+venv/
+
+# Data files
+*.db
 *.json
+
+# Cache
 __pycache__/

@@ -14,12 +14,13 @@
 
               <h1 class="h2">{{ teacher_info["name"] }}</h1>
               <p>
-                {% for goal in teacher_info["goals"] %}
+                {% set teacher_goals = teacher_info["goals"].split(",") %}
+                {% for goal in teacher_goals %}
                 <span class="badge badge-secondary mr-2">{{ goals_description[goal] }}</span>
                 {% endfor %}
                 Рейтинг: {{ teacher_info["rating"] }} Ставка: {{ teacher_info["price"] }} / час
               </p>
-              <p>{{ teacher_info["about"] }}</p>
+              <p>{{ teacher_info["description"] }}</p>
 
             </section>
 
